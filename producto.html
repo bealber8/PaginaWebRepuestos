@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Productos</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/galeria.js"></script>
+    <!-- <script src="js/modelos.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBa4UGy99y6U9AKaB2FLUFPURKYm3DKvFM",
+        authDomain: "autorecambiosbealber.firebaseapp.com",
+        databaseURL: "https://autorecambiosbealber.firebaseio.com",
+        projectId: "autorecambiosbealber",
+        storageBucket: "autorecambiosbealber.appspot.com",
+        messagingSenderId: "421104660179"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Auto Recambios Bealber</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html" >Inicio</a></li>
+              <li><a href="producto.html" >Productos</a></li>
+              <li><a href="localizacion.html" >Dónde estamos</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="autentificar.html"><span class="glyphicon glyphicon-log-in" id="logIn"></span> Login</a></li>
+              <li><a><img src="img/rss.png" alt="rss" id="rss"></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <h2 >Modelos Toyota</h2>
+      <div class="panel panel-default">
+        <div class="panel-body">A continuación se muestran los distintos modelos
+          de los que tenemos disponibles una serie de respuestos. Seleccione el
+          modelo que desee y se abrirá una nueva pestaña donde los encontrará.
+        </div>
+      </div>
+      <form id="formModelo">
+          <div class="form-group">
+            <label for="modelo" >Añadir modelo</label>
+            <input type="text" class="form-control" name="modelo" value="" id="modelo">
+          </div>
+          <input type="submit" class="btn btn-default" name="Añadir modelo" value="Añadir modelo" id="boton-enviar-modelo">
+          <label for="subirImagen" class="btn btn-file" id="imagen" >
+          <input type="file" name="subirImagen" id="subirImagen" class="hidden" >
+          <span class="glyphicon glyphicon-cloud-upload"></span> Añadir fotos
+          </label>
+        </form>
+        <div class="hidden" id="progreso">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+            aria-valuemin="0" aria-valuemax="100" id="barraProgreso">
+              <span class="sr-only">70% Complete</span>
+            </div>
+          </div>
+        </div>
+      <div class="list-group" id="listModelos">
+        <!-- <a href="repuesto.html" class="list-group-item">Toyota Corolla</a>
+        <a href="repuesto.html" class="list-group-item">Toyota Celica</a>
+        <a href="repuesto.html" class="list-group-item">Toyota GT86</a>
+        <a href="repuesto.html" class="list-group-item">Toyota Starlet</a>
+        <a href="repuesto.html" class="list-group-item">Toyota Paseo</a>
+        <a href="repuesto.html" class="list-group-item">Toyota Hiace</a>
+        <a href="repuesto.html" class="list-group-item">Toyota Hilux</a> -->
+      </div>
+    </div>
+    <div class="container" >
+      <h1>Galería</h1>
+      <!-- <form id="subirImagenes">
+        <label for="subirImagen" class="btn btn-file" id="imagen">
+        <input type="file" name="subirImagen" id="subirImagen" class="hidden">
+        <span class="glyphicon glyphicon-cloud-upload"></span> Añadir fotos
+      </label>ss
+      </form> -->
+
+      </div>
+      <div class="container">
+        <!-- <div class="row" id="imagenes">
+
+        </div>
+      </div> -->
+
+
+      <div class="row" >
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="img/ae86.jpeg">
+              <img src="img/ae86.jpeg" alt="AE86">
+              <div class="caption">
+                <p>AE86 "Hachiroku" GT Twincam 16v</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="img/ae86-2.jpg">
+              <img src="img/ae86-2.jpg" alt="AE86">
+              <div class="caption">
+                <p>AE86 "Hachiroku" GT Twincam 16v</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="img/ae86-3.jpg">
+              <img src="img/ae86-3.jpg" alt="AE86">
+              <div class="caption">
+                <p>AE86 "Hachiroku" GT Twincam 16v</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/ae86-4.jpg">
+                <img src="img/ae86-4.jpg" alt="AE86">
+                <div class="caption">
+                  <p>AE86 "Hachiroku" GT Twincam 16v</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/ae86-celica.jpeg">
+                <img src="img/ae86-celica.jpeg" alt="AE86-y-celica">
+                <div class="caption">
+                  <p>AE86 y Celica</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/ke70.jpg">
+                <img src="img/ke70.jpg" alt="KE70">
+                <div class="caption">
+                  <p>KE70 Station Wagon</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/ke70-2.jpg">
+                <img src="img/ke70-2.jpg" alt="KE70">
+                <div class="caption">
+                  <p>KE70 Station Wagon</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/ke70-3.jpg">
+                <img src="img/ke70-3.jpg" alt="KE70">
+                <div class="caption">
+                  <p>KE70 Station Wagon</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/celica.jpg">
+                <img src="img/celica.jpg" alt="Celica">
+                <div class="caption">
+                  <p>Celica ST182 Twincam 16v</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/celica2.jpg">
+                <img src="img/celica2.jpg" alt="Celica">
+                <div class="caption">
+                  <p>Celica ST182 Twincam 16v</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/gt866.jpg">
+                <img src="img/gt866.jpg" alt="GT86">
+                <div class="caption">
+                  <p>GT86</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/starlet.jpg">
+                <img src="img/starlet.jpg" alt="Starlet">
+                <div class="caption">
+                  <p>Starlet KP61</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/paseoo.jpg">
+                <img src="img/paseoo.jpg" alt="Paseo">
+                <div class="caption">
+                  <p>Paseo</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/hiace.jpg">
+                <img src="img/hiace.jpg" alt="Hiace">
+                <div class="caption">
+                  <p>Hiace</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="img/hilux.jpg">
+                <img src="img/hilux.jpg" alt="Hilux">
+                <div class="caption">
+                  <p>Hilux</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+    </body>
+</html>

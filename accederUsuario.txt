@@ -1,0 +1,8 @@
+Para entrar como administrador y poder tener todos los permisos el correo es 
+administrador@user.com y la contraseña es administrador
+Un usuario normal sólo tiene permiso de lectura y en el caso del formulario de contacto 
+tiene asignado el permiso de escribir.
+
+P.D:
+Para editar las imagenes de la galería cuando pulsas el botón para editar hay que darle
+al botón añadir fotos justo después.

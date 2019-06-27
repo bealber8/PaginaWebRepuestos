@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Respuestos</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/mantenimiento.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBa4UGy99y6U9AKaB2FLUFPURKYm3DKvFM",
+        authDomain: "autorecambiosbealber.firebaseapp.com",
+        databaseURL: "https://autorecambiosbealber.firebaseio.com",
+        projectId: "autorecambiosbealber",
+        storageBucket: "autorecambiosbealber.appspot.com",
+        messagingSenderId: "421104660179"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50" class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top container">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="producto.html">Auto Recambios Bealber</a>
+        </div>
+        <div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav" id="sectionModelo">
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Toyota Corolla<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#section11">AE86</a></li>
+                  <li><a href="#section12">KE70</a></li>
+                </ul>
+              </li>
+              <li><a href="#section2">Celica</a></li>
+              <li><a href="#section3">GT86</a></li>
+              <li><a href="#section4">Starlet</a></li>
+              <li><a href="#section5">Paseo</a></li>
+              <li><a href="#section6">Hiace</a></li>
+              <li><a href="#section7">Hilux</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container" id="crearSectionModelo">
+
+    </div>
+    <div id="section11" class="container-fluid">
+      <h1>Toyota Corolla AE86</h1>
+      <p>Repuestos Toyota AE86 año 1983-1987</p>
+      <div class="col-sm-9">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Repuesto</th>
+            <th>Referencia</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="repuestosAE86">
+          <!-- <tr>
+            <td>Frenos</td>
+            <td>
+              <p>Discos de freno</p>
+              <p>Pastillas</p>
+              <p>Latiguillos</p>
+              <p>Pinzas</p>
+              <p>Zapatas</p>
+              <p>Cable de freno de mano</p>
+            </td>
+            <td>
+              <p>ae8601</p>
+              <p>ae8602</p>
+              <p>ae8603</p>
+              <p>ae8604</p>
+              <p>ae8605</p>
+              <p>ae8606</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Filtros</td>
+            <td>
+              <p>Filtro de aceite</p>
+              <p>Filtro de aire</p>
+              <p>Filtro de combustible</p>
+            </td>
+            <td>
+              <p>ae8607</p>
+              <p>ae8608</p>
+              <p>ae8609</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Motor</td>
+            <td>
+              <p>Correa</p>
+              <p>Taqués hidráulicos</p>
+              <p>Junta tapa balancines</p>
+              <p>Junta culata</p>
+              <p>Taco de motor</p>
+              <p>Bomba de agua</p>
+              <p>Tapa de delco</p>
+              <p>Árbol de levas</p>
+              <p>Cables de bujía</p>
+            </td>
+            <td>
+              <p>ae86010</p>
+              <p>ae86011</p>
+              <p>ae86012</p>
+              <p>ae86013</p>
+              <p>ae86014</p>
+              <p>ae86015</p>
+              <p>ae86016</p>
+              <p>ae86017</p>
+              <p>ae86018</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Amrtiguadores</p>
+              <p>Muelles</p>
+              <p>Ballestas</p></td>
+            <td>
+              <p>Amortiguadores</p>
+              <p>Muelles de suspensión</p>
+              <p>Copela amortiguador y cojinete</p>
+              <p>Guardapolvo amortiguador</p>
+              <p>Almohadilla tope suspensión</p>
+            </td>
+            <td>
+              <p>ae86019</p>
+              <p>ae86020</p>
+              <p>ae86021</p>
+              <p>ae86022</p>
+              <p>ae86023</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Rodamientos</td>
+            <td>
+              <p>Cojinete de rueda</p>
+              <p>Cojinete de empuje</p>
+              <p>Soporte de cardán</p>
+              <p>Casquíllos de biela</p>
+            </td>
+            <td>
+              <p>ae86024</p>
+              <p>ae86025</p>
+              <p>ae86026</p>
+              <p>ae86027</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Suspensión y brazos</td>
+            <td>
+              <p>Bieletas de suspensión</p>
+              <p>Brazo de suspensión</p>
+              <p>Rótula de dirección</p>
+              <p>Rótula de suspensión</p>
+              <p>Buje de rueda</p>
+            </td>
+            <td>
+              <p>ae86028</p>
+              <p>ae86029</p>
+              <p>ae86030</p>
+              <p>ae86031</p>
+              <p>ae86032</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Sistema eléctrico</td>
+            <td>
+              <p>Faro principal</p>
+              <p>Piloto intermitente</p>
+              <p>Sonda Lambda</p>
+              <p>Alternador</p>
+              <p>Motor de arranque</p>
+              <p>Sensor de temperatura del refrigerante</p>
+            </td>
+            <td>
+              <p>ae86033</p>
+              <p>ae86034</p>
+              <p>ae86035</p>
+              <p>ae86036</p>
+              <p>ae86037</p>
+              <p>ae86038</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Limpieza de cristales</td>
+            <td>
+              <p>Escobillas de limpiaparabrisas</p>
+              <p>Brazo de limpiaparabrisas</p>
+              <p>Bomba de limpiaparabrisas</p>
+            </td>
+            <td>
+              <p>ae86039</p>
+              <p>ae86040</p>
+              <p>ae86041</p>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+      </div>
+      <div class="col-sm-3">
+        <!-- formulario para añadir -->
+        <form id="formRepuestos">
+            <div class="form-group">
+              <label for="categoria">Categoría</label>
+              <input type="text" class="form-control" name="categoria" value="" id="categoria">
+            </div>
+            <div class="form-group">
+              <label for="repuesto">Repuesto</label>
+              <input type="text" class="form-control" name="repuesto" value="" id="repuesto">
+            </div>
+            <div class="form-group">
+              <label for="referencia">Referencia</label>
+              <input type="text" class="form-control" name="referencia" value="" id="referencia">
+            </div>
+            <input type="submit" class="btn btn-default" name="Añadir repuesto" value="Añadir repuesto" id="boton-enviar-repuesto">
+          </form>
+      </div>
+    </div>
+    <div id="section12" class="container-fluid">
+      <h1>Toyota Corolla KE70</h1>
+      <p>Repuestos Toyota KE70 año 1979-1987</p>
+      <div class="col-sm-9">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Repuesto</th>
+            <th>Referencia</th>
+          </tr>
+        </thead>
+        <tbody id="repuestosKE70">
+          <!-- <tr>
+            <td>Frenos</td>
+            <td>
+              <p>Discos de freno</p>
+              <p>Pastillas</p>
+              <p>Latiguillos</p>
+              <p>Pinzas</p>
+              <p>Zapatas</p>
+              <p>Cable de freno de mano</p>
+            </td>
+            <td>
+              <p>Ke7001</p>
+              <p>Ke7002</p>
+              <p>Ke7003</p>
+              <p>Ke7004</p>
+              <p>Ke7005</p>
+              <p>Ke7006</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Filtros</td>
+            <td>
+              <p>Filtro de aceite</p>
+              <p>Filtro de aire</p>
+              <p>Filtro de combustible</p>
+            </td>
+            <td>
+              <p>Ke7007</p>
+              <p>Ke7008</p>
+              <p>Ke7009</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Motor</td>
+            <td>
+              <p>Correa</p>
+              <p>Taqués hidráulicos</p>
+              <p>Junta tapa balancines</p>
+              <p>Junta culata</p>
+              <p>Taco de motor</p>
+              <p>Bomba de agua</p>
+              <p>Tapa de delco</p>
+              <p>Árbol de levas</p>
+              <p>Cables de bujía</p>
+            </td>
+            <td>
+              <p>Ke70010</p>
+              <p>Ke70011</p>
+              <p>Ke70012</p>
+              <p>Ke70013</p>
+              <p>Ke70014</p>
+              <p>Ke70015</p>
+              <p>Ke70016</p>
+              <p>Ke70017</p>
+              <p>Ke70018</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Amortiguadores</p>
+              <p>Muelles</p>
+              <p>Ballestas</p></td>
+            <td>
+              <p>Amortiguadores</p>
+              <p>Muelles de suspensión</p>
+              <p>Copela amortiguador y cojinete</p>
+              <p>Guardapolvo amortiguador</p>
+              <p>Almohadilla tope suspensión</p>
+              <p>Ballestas</p>
+            </td>
+            <td>
+              <p>Ke70019</p>
+              <p>Ke70020</p>
+              <p>Ke70021</p>
+              <p>Ke70022</p>
+              <p>Ke70023</p>
+              <p>Ke70024</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Rodamientos</td>
+            <td>
+              <p>Cojinete de rueda</p>
+              <p>Cojinete de empuje</p>
+              <p>Soporte de cardán</p>
+              <p>Casquíllos de biela</p>
+            </td>
+            <td>
+              <p>Ke70025</p>
+              <p>Ke70026</p>
+              <p>Ke70027</p>
+              <p>Ke70028</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Suspensión y brazos</td>
+            <td>
+              <p>Bieletas de suspensión</p>
+              <p>Brazo de suspensión</p>
+              <p>Rótula de dirección</p>
+              <p>Rótula de suspensión</p>
+              <p>Buje de rueda</p>
+            </td>
+            <td>
+              <p>Ke70029</p>
+              <p>Ke70030</p>
+              <p>Ke70031</p>
+              <p>Ke70032</p>
+              <p>Ke70033</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Sistema eléctrico</td>
+            <td>
+              <p>Faro principal</p>
+              <p>Piloto intermitente</p>
+              <p>Sonda Lambda</p>
+              <p>Alternador</p>
+              <p>Motor de arranque</p>
+              <p>Sensor de temperatura del refrigerante</p>
+            </td>
+            <td>
+              <p>Ke70034</p>
+              <p>Ke70035</p>
+              <p>Ke70036</p>
+              <p>Ke70037</p>
+              <p>Ke70038</p>
+              <p>Ke70039</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Limpieza de cristales</td>
+            <td>
+              <p>Escobillas de limpiaparabrisas</p>
+              <p>Brazo de limpiaparabrisas</p>
+              <p>Bomba de limpiaparabrisas</p>
+            </td>
+            <td>
+              <p>Ke70040</p>
+              <p>Ke70041</p>
+              <p>Ke70042</p>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-3">
+      <!-- formulario para añadir -->
+      <form id="formRepuestosKE70">
+          <div class="form-group">
+            <label for="categoriaKE70">Categoría</label>
+            <input type="text" class="form-control" name="categoriaKE70" value="" id="categoriaKE70">
+          </div>
+          <div class="form-group">
+            <label for="repuestoKE70">Repuesto</label>
+            <input type="text" class="form-control" name="repuestoKE70" value="" id="repuestoKE70">
+          </div>
+          <div class="form-group">
+            <label for="referenciaKE70">Referencia</label>
+            <input type="text" class="form-control" name="referenciaKE70" value="" id="referenciaKE70">
+          </div>
+          <input type="submit" class="btn btn-default" name="Añadir repuesto" value="Añadir repuesto" id="boton-enviar-repuesto-KE70">
+        </form>
+    </div>
+    </div>
+    <div id="section2" class="container-fluid">
+      <h1>Toyota Celica</h1>
+      <p>Repuestos Toyota Celica año 1970-2006</p>
+      <div class="col-sm-9">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Categoría</th>
+              <th>Repuesto</th>
+              <th>Referencia</th>
+            </tr>
+          </thead>
+          <tbody id="repuestosCelica">
+            <!-- <tr>
+              <td>Frenos</td>
+              <td>
+                <p>Discos de freno</p>
+                <p>Pastillas</p>
+                <p>Latiguillos</p>
+                <p>Pinzas</p>
+                <p>Zapatas</p>
+                <p>Cable de freno de mano</p>
+              </td>
+              <td>
+                <p>st1801</p>
+                <p>st1802</p>
+                <p>st1803</p>
+                <p>st1804</p>
+                <p>st1805</p>
+                <p>st1806</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Filtros</td>
+              <td>
+                <p>Filtro de aceite</p>
+                <p>Filtro de aire</p>
+                <p>Filtro de combustible</p>
+              </td>
+              <td>
+                <p>st1807</p>
+                <p>st1808</p>
+                <p>st1809</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Motor</td>
+              <td>
+                <p>Correa</p>
+                <p>Taqués hidráulicos</p>
+                <p>Junta tapa balancines</p>
+                <p>Junta culata</p>
+                <p>Taco de motor</p>
+                <p>Bomba de agua</p>
+                <p>Tapa de delco</p>
+                <p>Árbol de levas</p>
+                <p>Cables de bujía</p>
+              </td>
+              <td>
+                <p>st18010</p>
+                <p>st18011</p>
+                <p>st18012</p>
+                <p>st18013</p>
+                <p>st18014</p>
+                <p>st18015</p>
+                <p>st18016</p>
+                <p>st18017</p>
+                <p>st18018</p>
+              </td>
+            </tr>
+            <tr>
+              <td><p>Amortiguadores</p>
+                <p>Muelles</p>
+                <p>Ballestas</p></td>
+              <td>
+                <p>Amortiguadores</p>
+                <p>Muelles de suspensión</p>
+                <p>Copela amortiguador y cojinete</p>
+                <p>Guardapolvo amortiguador</p>
+                <p>Almohadilla tope suspensión</p>
+              </td>
+              <td>
+                <p>st18019</p>
+                <p>st18020</p>
+                <p>st18021</p>
+                <p>st18022</p>
+                <p>st18023</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Rodamientos</td>
+              <td>
+                <p>Cojinete de rueda</p>
+                <p>Cojinete de empuje</p>
+                <p>Soporte de cardán</p>
+                <p>Casquíllos de biela</p>
+              </td>
+              <td>
+                <p>st18024</p>
+                <p>st18025</p>
+                <p>st18026</p>
+                <p>st18027</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Suspensión y brazos</td>
+              <td>
+                <p>Bieletas de suspensión</p>
+                <p>Brazo de suspensión</p>
+                <p>Rótula de dirección</p>
+                <p>Rótula de suspensión</p>
+                <p>Buje de rueda</p>
+              </td>
+              <td>
+                <p>st18028</p>
+                <p>st18029</p>
+                <p>st18030</p>
+                <p>st18031</p>
+                <p>st18032</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Sistema eléctrico</td>
+              <td>
+                <p>Faro principal</p>
+                <p>Piloto intermitente</p>
+                <p>Sonda Lambda</p>
+                <p>Alternador</p>
+                <p>Motor de arranque</p>
+                <p>Sensor de temperatura del refrigerante</p>
+              </td>
+              <td>
+                <p>st18033</p>
+                <p>st18034</p>
+                <p>st18035</p>
+                <p>st18036</p>
+                <p>st18037</p>
+                <p>st18038</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Limpieza de cristales</td>
+              <td>
+                <p>Escobillas de limpiaparabrisas</p>
+                <p>Brazo de limpiaparabrisas</p>
+                <p>Bomba de limpiaparabrisas</p>
+              </td>
+              <td>
+                <p>st18039</p>
+                <p>st18040</p>
+                <p>st18041</p>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+        </div>
+        <div class="col-sm-3">
+          <!-- formulario para añadir -->
+          <form id="formRepuestosCelica">
+              <div class="form-group">
+                <label for="categoriaCelica">Categoría</label>
+                <input type="text" class="form-control" name="categoriaCelica" value="" id="categoriaCelica">
+              </div>
+              <div class="form-group">
+                <label for="repuestoCelica">Repuesto</label>
+                <input type="text" class="form-control" name="repuestoCelica" value="" id="repuestoCelica">
+              </div>
+              <div class="form-group">
+                <label for="referenciaCelica">Referencia</label>
+                <input type="text" class="form-control" name="referenciaCelica" value="" id="referenciaCelica">
+              </div>
+              <input type="submit" class="btn btn-default" name="Añadir repuesto" value="Añadir repuesto" id="boton-enviar-repuesto-Celica">
+            </form>
+        </div>
+    </div>
+    <div id="section3" class="container-fluid">
+      <h1>Toyota GT86</h1>
+      <p>Repuestos Toyota GT86 año 2012-presente</p>
+      <div class="col-sm-9">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Repuesto</th>
+            <th>Referencia</th>
+          </tr>
+        </thead>
+        <tbody id="repuestosGT86">
+          <!-- <tr>
+            <td>Frenos</td>
+            <td>
+              <p>Discos de freno</p>
+              <p>Pastillas</p>
+              <p>Latiguillos</p>
+              <p>Pinzas</p>
+              <p>Zapatas</p>
+              <p>Cable de freno de mano</p>
+            </td>
+            <td>
+              <p>gt8601</p>
+              <p>gt8602</p>
+              <p>gt8603</p>
+              <p>gt8604</p>
+              <p>gt8605</p>
+              <p>gt8606</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Filtros</td>
+            <td>
+              <p>Filtro de aceite</p>
+              <p>Filtro de aire</p>
+              <p>Filtro de combustible</p>
+            </td>
+            <td>
+              <p>gt8607</p>
+              <p>gt8608</p>
+              <p>gt8609</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Motor</td>
+            <td>
+              <p>Correa</p>
+              <p>Taqués hidráulicos</p>
+              <p>Junta tapa balancines</p>
+              <p>Junta culata</p>
+              <p>Taco de motor</p>
+              <p>Bomba de agua</p>
+              <p>Tapa de delco</p>
+              <p>Árbol de levas</p>
+              <p>Cables de bujía</p>
+            </td>
+            <td>
+              <p>gt86010</p>
+              <p>gt86011</p>
+              <p>gt86012</p>
+              <p>gt86013</p>
+              <p>gt86014</p>
+              <p>gt86015</p>
+              <p>gt86016</p>
+              <p>gt86017</p>
+              <p>gt86018</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Amrtiguadores</p>
+              <p>Muelles</p>
+              <p>Ballestas</p></td>
+            <td>
+              <p>Amortiguadores</p>
+              <p>Muelles de suspensión</p>
+              <p>Copela amortiguador y cojinete</p>
+              <p>Guardapolvo amortiguador</p>
+              <p>Almohadilla tope suspensión</p>
+            </td>
+            <td>
+              <p>gt86019</p>
+              <p>gt86020</p>
+              <p>gt86021</p>
+              <p>gt86022</p>
+              <p>gt86023</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Rodamientos</td>
+            <td>
+              <p>Cojinete de rueda</p>
+              <p>Cojinete de empuje</p>
+              <p>Soporte de cardán</p>
+              <p>Casquíllos de biela</p>
+            </td>
+            <td>
+              <p>gt86024</p>
+              <p>gt86025</p>
+              <p>gt86026</p>
+              <p>gt86027</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Suspensión y brazos</td>
+            <td>
+              <p>Bieletas de suspensión</p>
+              <p>Brazo de suspensión</p>
+              <p>Rótula de dirección</p>
+              <p>Rótula de suspensión</p>
+              <p>Buje de rueda</p>
+            </td>
+            <td>
+              <p>gt86028</p>
+              <p>gt86029</p>
+              <p>gt86030</p>
+              <p>gt86031</p>
+              <p>gt86032</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Sistema eléctrico</td>
+            <td>
+              <p>Faro principal</p>
+              <p>Piloto intermitente</p>
+              <p>Sonda Lambda</p>
+              <p>Alternador</p>
+              <p>Motor de arranque</p>
+              <p>Sensor de temperatura del refrigerante</p>
+            </td>
+            <td>
+              <p>gt86033</p>
+              <p>gt86034</p>
+              <p>gt86035</p>
+              <p>gt86036</p>
+              <p>gt86037</p>
+              <p>gt86038</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Limpieza de cristales</td>
+            <td>
+              <p>Escobillas de limpiaparabrisas</p>
+              <p>Brazo de limpiaparabrisas</p>
+              <p>Bomba de limpiaparabrisas</p>
+            </td>
+            <td>
+              <p>gt86039</p>
+              <p>gt86040</p>
+              <p>gt86041</p>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+      </div>
+      <div class="col-sm-3">
+        <!-- formulario para añadir -->
+        <form id="formRepuestosGT86">
+            <div class="form-group">
+              <label for="categoriaGT86">Categoría</label>
+              <input type="text" class="form-control" name="categoriaGT86" value="" id="categoriaGT86">
+            </div>
+            <div class="form-group">
+              <label for="repuestoGT86">Repuesto</label>
+              <input type="text" class="form-control" name="repuestoGT86" value="" id="repuestoGT86">
+            </div>
+            <div class="form-group">
+              <label for="referenciaGT86">Referencia</label>
+              <input type="text" class="form-control" name="referenciaGT86" value="" id="referenciaGT86">
+            </div>
+            <input type="submit" class="btn btn-default" name="Añadir repuesto" value="Añadir repuesto" id="boton-enviar-repuesto-GT86">
+          </form>
+      </div>
+    </div>
+    <div id="section4" class="container-fluid">
+      <h1>Toyota Starlet</h1>
+      <p>Respuestos Toyota Starlet año 1973-1999</p>
+      <div class="col-sm-9">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Repuesto</th>
+            <th>Referencia</th>
+          </tr>
+        </thead>
+        <tbody id="repuestosStarlet">
+          <!-- <tr>
+            <td>Frenos</td>
+            <td>
+              <p>Discos de freno</p>
+              <p>Pastillas</p>
+              <p>Latiguillos</p>
+              <p>Pinzas</p>
+              <p>Zapatas</p>
+              <p>Cable de freno de mano</p>
+            </td>
+            <td>
+              <p>kp6101</p>
+              <p>kp6102</p>
+              <p>kp6103</p>
+              <p>kp6104</p>
+              <p>kp6105</p>
+              <p>kp6106</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Filtros</td>
+            <td>
+              <p>Filtro de aceite</p>
+              <p>Filtro de aire</p>
+              <p>Filtro de combustible</p>
+            </td>
+            <td>
+              <p>kp6107</p>
+              <p>kp6108</p>
+              <p>kp6109</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Motor</td>
+            <td>
+              <p>Correa</p>
+              <p>Taqués hidráulicos</p>
+              <p>Junta tapa balancines</p>
+              <p>Junta culata</p>
+              <p>Taco de motor</p>
+              <p>Bomba de agua</p>
+              <p>Tapa de delco</p>
+              <p>Árbol de levas</p>
+              <p>Cables de bujía</p>
+            </td>
+            <td>
+              <p>kp61010</p>
+              <p>kp61011</p>
+              <p>kp61012</p>
+              <p>kp61013</p>
+              <p>kp61014</p>
+              <p>kp61015</p>
+              <p>kp61016</p>
+              <p>kp61017</p>
+              <p>kp61018</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Amrtiguadores</p>
+              <p>Muelles</p>
+              <p>Ballestas</p></td>
+            <td>
+              <p>Amortiguadores</p>
+              <p>Muelles de suspensión</p>
+              <p>Copela amortiguador y cojinete</p>
+              <p>Guardapolvo amortiguador</p>
+              <p>Almohadilla tope suspensión</p>
+              <p>Ballestas</p>
+            </td>
+            <td>
+              <p>kp61019</p>
+              <p>kp61020</p>
+              <p>kp61021</p>
+              <p>kp61022</p>
+              <p>kp61023</p>
+              <p>kp61024</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Rodamientos</td>
+            <td>
+              <p>Cojinete de rueda</p>
+              <p>Cojinete de empuje</p>
+              <p>Soporte de cardán</p>
+              <p>Casquíllos de biela</p>
+            </td>
+            <td>
+              <p>kp61025</p>
+              <p>kp61026</p>
+              <p>kp61027</p>
+              <p>kp61028</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Suspensión y brazos</td>
+            <td>
+              <p>Bieletas de suspensión</p>
+              <p>Brazo de suspensión</p>
+              <p>Rótula de dirección</p>
+              <p>Rótula de suspensión</p>
+              <p>Buje de rueda</p>
+            </td>
+            <td>
+              <p>kp61029</p>
+              <p>kp61030</p>
+              <p>kp61031</p>
+              <p>kp61032</p>
+              <p>kp61033</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Sistema eléctrico</td>
+            <td>
+              <p>Faro principal</p>
+              <p>Piloto intermitente</p>
+              <p>Sonda Lambda</p>
+              <p>Alternador</p>
+              <p>Motor de arranque</p>
+              <p>Sensor de temperatura del refrigerante</p>
+            </td>
+            <td>
+              <p>kp61034</p>
+              <p>kp61035</p>
+              <p>kp61036</p>
+              <p>kp61037</p>
+              <p>kp61038</p>
+              <p>kp61039</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Limpieza de cristales</td>
+            <td>
+              <p>Escobillas de limpiaparabrisas</p>
+              <p>Brazo de limpiaparabrisas</p>
+              <p>Bomba de limpiaparabrisas</p>
+            </td>
+            <td>
+              <p>kp61040</p>
+              <p>kp61041</p>
+              <p>kp61042</p>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+      </div>
+      <div class="col-sm-3">
+        <!-- formulario para añadir -->
+        <form id="formRepuestosStarlet">
+            <div class="form-group">
+              <label for="categoriaStarlet">Categoría</label>
+              <input type="text" class="form-control" name="categoriaStarlet" value="" id="categoriaStarlet">
+            </div>
+            <div class="form-group">
+              <label for="repuestoStarlet">Repuesto</label>
+              <input type="text" class="form-control" name="repuestoStarlet" value="" id="repuestoStarlet">
+            </div>
+            <div class="form-group">
+              <label for="referenciaStarlet">Referencia</label>
+              <input type="text" class="form-control" name="referenciaStarlet" value="" id="referenciaStarlet">
+            </div>
+            <input type="submit" class="btn btn-default" name="Añadir repuesto" value="Añadir repuesto" id="boton-enviar-repuesto-Starlet">
+          </form>
+      </div>
+    </div>
+    <div id="section5" class="container-fluid">
+      <h1>Toyota Paseo</h1>
+      <p>Respuestos Toyota Paseo año 1991-1999</p>
+      <div class="col-sm-9">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Repuesto</th>
+            <th>Referencia</th>
+          </tr>
+        </thead>
+        <tbody id="repuestosPaseo">
+          <!-- <tr>
+            <td>Frenos</td>
+            <td>
+              <p>Discos de freno</p>
+              <p>Pastillas</p>
+              <p>Latiguillos</p>
+              <p>Pinzas</p>
+              <p>Zapatas</p>
+              <p>Cable de freno de mano</p>
+            </td>
+            <td>
+              <p>el4401</p>
+              <p>el4402</p>
+              <p>el4403</p>
+              <p>el4404</p>
+              <p>el4405</p>
+              <p>el4406</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Filtros</td>
+            <td>
+              <p>Filtro de aceite</p>
+              <p>Filtro de aire</p>
+              <p>Filtro de combustible</p>
+            </td>
+            <td>
+              <p>el4407</p>
+              <p>el4408</p>
+              <p>el4409</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Motor</td>
+            <td>
+              <p>Correa</p>
+              <p>Taqués hidráulicos</p>
+              <p>Junta tapa balancines</p>
+              <p>Junta culata</p>
+              <p>Taco de motor</p>
+              <p>Bomba de agua</p>
+              <p>Tapa de delco</p>
+              <p>Árbol de levas</p>
+              <p>Cables de bujía</p>
+            </td>
+            <td>
+              <p>el44010</p>
+              <p>el44011</p>
+              <p>el44012</p>
+              <p>el44013</p>
+              <p>el44014</p>
+              <p>el44015</p>
+              <p>el44016</p>
+              <p>el44017</p>
+              <p>el44018</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Amrtiguadores</p>
+              <p>Muelles</p>
+              <p>Ballestas</p></td>
+            <td>
+              <p>Amortiguadores</p>
+              <p>Muelles de suspensión</p>
+              <p>Copela amortiguador y cojinete</p>
+              <p>Guardapolvo amortiguador</p>
+              <p>Almohadilla tope suspensión</p>
+            </td>
+            <td>
+              <p>el44019</p>
+              <p>el44020</p>
+              <p>el44021</p>
+              <p>el44022</p>
+              <p>el44023</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Rodamientos</td>
+            <td>
+              <p>Cojinete de rueda</p>
+              <p>Cojinete de empuje</p>
+              <p>Soporte de cardán</p>
+              <p>Casquíllos de biela</p>
+            </td>
+            <td>
+              <p>el44024</p>
+              <p>el44025</p>
+              <p>el44026</p>
+              <p>el44027</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Suspensión y brazos</td>
+            <td>
+              <p>Bieletas de suspensión</p>
+              <p>Brazo de suspensión</p>
+              <p>Rótula de dirección</p>
+              <p>Rótula de suspensión</p>
+              <p>Buje de rueda</p>
+            </td>
+            <td>
+              <p>el44028</p>
+              <p>el44029</p>
+              <p>el44030</p>
+              <p>el44031</p>
+              <p>el44032</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Sistema eléctrico</td>
+            <td>
+              <p>Faro principal</p>
+              <p>Piloto intermitente</p>
+              <p>Sonda Lambda</p>
+              <p>Alternador</p>
+              <p>Motor de arranque</p>
+              <p>Sensor de temperatura del refrigerante</p>
+            </td>
+            <td>
+              <p>el44033</p>
+              <p>el44034</p>
+              <p>el44035</p>
+              <p>el44036</p>
+              <p>el44037</p>
+              <p>el44038</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Limpieza de cristales</td>
+            <td>
+              <p>Escobillas de limpiaparabrisas</p>
+              <p>Brazo de limpiaparabrisas</p>
+              <p>Bomba de limpiaparabrisas</p>
+            </td>
+            <td>
+              <p>el44039</p>
+              <p>el44040</p>
+              <p>el44041</p>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+      </div>
+      <div class="col-sm-3">
+        <!-- formulario para añadir -->
+        <form id="formRepuestosPaseo">
+            <div class="form-group">
+              <label for="categoriaPaseo">Categoría</label>
+              <input type="text" class="form-control" name="categoriaPaseo" value="" id="categoriaPaseo">
+            </div>
+            <div class="form-group">
+              <label for="repuestoPaseo">Repuesto</label>
+              <input type="text" class="form-control" name="repuestoPaseo" value="" id="repuestoPaseo">
+            </div>
+            <div class="form-group">
+              <label for="referenciaPaseo">Referencia</label>
+              <input type="text" class="form-control" name="referenciaPaseo" value="" id="referenciaPaseo">
+            </div>
+            <input type="submit" class="btn btn-default" name="Añadir repuesto" value="Añadir repuesto" id="boton-enviar-repuesto-Paseo">
+          </form>
+      </div>
+    </div>
+    <div id="section6" class="container-fluid">
+      <h1>Toyota Hiace</h1>
+      <p>Respuestos Toyota Hiace año 1967-presente</p>
+      <div class="col-sm-9">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Repuesto</th>
+            <th>Referencia</th>
+          </tr>
+        </thead>
+        <tbody id="repuestosHiace">
+          <!-- <tr>
+            <td>Frenos</td>
+            <td>
+              <p>Discos de freno</p>
+              <p>Pastillas</p>
+              <p>Latiguillos</p>
+              <p>Pinzas</p>
+              <p>Zapatas</p>
+              <p>Cable de freno de mano</p>
+            </td>
+            <td>
+              <p>h1001</p>
+              <p>h1002</p>
+              <p>h1003</p>
+              <p>h1004</p>
+              <p>h1005</p>
+              <p>h1006</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Filtros</td>
+            <td>
+              <p>Filtro de aceite</p>
+              <p>Filtro de aire</p>
+              <p>Filtro de combustible</p>
+            </td>
+            <td>
+              <p>h1007</p>
+              <p>h1008</p>
+              <p>h1009</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Motor</td>
+            <td>
+              <p>Correa</p>
+              <p>Taqués hidráulicos</p>
+              <p>Junta tapa balancines</p>
+              <p>Junta culata</p>
+              <p>Taco de motor</p>
+              <p>Bomba de agua</p>
+              <p>Tapa de delco</p>
+              <p>Árbol de levas</p>
+              <p>Cables de bujía</p>
+            </td>
+            <td>
+              <p>h10010</p>
+              <p>h10011</p>
+              <p>h10012</p>
+              <p>h10013</p>
+              <p>h10014</p>
+              <p>h10015</p>
+              <p>h10016</p>
+              <p>h10017</p>
+              <p>h10018</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Amrtiguadores</p>
+              <p>Muelles</p>
+              <p>Ballestas</p></td>
+            <td>
+              <p>Amortiguadores</p>
+              <p>Muelles de suspensión</p>
+              <p>Copela amortiguador y cojinete</p>
+              <p>Guardapolvo amortiguador</p>
+              <p>Almohadilla tope suspensión</p>
+              <p>Ballestas</p>
+            </td>
+            <td>
+              <p>h10019</p>
+              <p>h10020</p>
+              <p>h10021</p>
+              <p>h10022</p>
+              <p>h10023</p>
+              <p>h10024</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Rodamientos</td>
+            <td>
+              <p>Cojinete de rueda</p>
+              <p>Cojinete de empuje</p>
+              <p>Soporte de cardán</p>
+              <p>Casquíllos de biela</p>
+            </td>
+            <td>
+              <p>h10025</p>
+              <p>h10026</p>
+              <p>h10027</p>
+              <p>h10028</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Suspensión y brazos</td>
+            <td>
+              <p>Bieletas de suspensión</p>
+              <p>Brazo de suspensión</p>
+              <p>Rótula de dirección</p>
+              <p>Rótula de suspensión</p>
+              <p>Buje de rueda</p>
+            </td>
+            <td>
+              <p>h10029</p>
+              <p>h10030</p>
+              <p>h10031</p>
+              <p>h10032</p>
+              <p>h10033</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Sistema eléctrico</td>
+            <td>
+              <p>Faro principal</p>
+              <p>Piloto intermitente</p>
+              <p>Sonda Lambda</p>
+              <p>Alternador</p>
+              <p>Motor de arranque</p>
+              <p>Sensor de temperatura del refrigerante</p>
+            </td>
+            <td>
+              <p>h10034</p>
+              <p>h10035</p>
+              <p>h10036</p>
+              <p>h10037</p>
+              <p>h10038</p>
+              <p>h10039</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Limpieza de cristales</td>
+            <td>
+              <p>Escobillas de limpiaparabrisas</p>
+              <p>Brazo de limpiaparabrisas</p>
+              <p>Bomba de limpiaparabrisas</p>
+            </td>
+            <td>
+              <p>h10040</p>
+              <p>h10041</p>
+              <p>h10042</p>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+      </div>
+      <div class="col-sm-3">
+        <!-- formulario para añadir -->
+        <form id="formRepuestosHiace">
+            <div class="form-group">
+              <label for="categoriaHiace">Categoría</label>
+              <input type="text" class="form-control" name="categoriaHiace" value="" id="categoriaHiace">
+            </div>
+            <div class="form-group">
+              <label for="repuestoHiace">Repuesto</label>
+              <input type="text" class="form-control" name="repuestoHiace" value="" id="repuestoHiace">
+            </div>
+            <div class="form-group">
+              <label for="referenciaHiace">Referencia</label>
+              <input type="text" class="form-control" name="referenciaHiace" value="" id="referenciaHiace">
+            </div>
+            <input type="submit" class="btn btn-default" name="Añadir repuesto" value="Añadir repuesto" id="boton-enviar-repuesto-Hiace">
+          </form>
+      </div>
+    </div>
+    <div id="section7" class="container-fluid">
+      <h1>Toyota Hilux</h1>
+      <p>Respuestos Toyota Hilux año 1968-presente</p>
+      <div class="col-sm-9">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Categoría</th>
+            <th>Repuesto</th>
+            <th>Referencia</th>
+          </tr>
+        </thead>
+        <tbody id="repuestosHilux">
+          <!-- <tr>
+            <td>Frenos</td>
+            <td>
+              <p>Discos de freno</p>
+              <p>Pastillas</p>
+              <p>Latiguillos</p>
+              <p>Pinzas</p>
+              <p>Zapatas</p>
+              <p>Cable de freno de mano</p>
+            </td>
+            <td>
+              <p>n1001</p>
+              <p>n1002</p>
+              <p>n1003</p>
+              <p>n1004</p>
+              <p>n1005</p>
+              <p>n1006</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Filtros</td>
+            <td>
+              <p>Filtro de aceite</p>
+              <p>Filtro de aire</p>
+              <p>Filtro de combustible</p>
+            </td>
+            <td>
+              <p>n1007</p>
+              <p>n1008</p>
+              <p>n1009</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Motor</td>
+            <td>
+              <p>Correa</p>
+              <p>Taqués hidráulicos</p>
+              <p>Junta tapa balancines</p>
+              <p>Junta culata</p>
+              <p>Taco de motor</p>
+              <p>Bomba de agua</p>
+              <p>Tapa de delco</p>
+              <p>Árbol de levas</p>
+              <p>Cables de bujía</p>
+            </td>
+            <td>
+              <p>n10010</p>
+              <p>n10011</p>
+              <p>n10012</p>
+              <p>n10013</p>
+              <p>n10014</p>
+              <p>n10015</p>
+              <p>n10016</p>
+              <p>n10017</p>
+              <p>n10018</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Amrtiguadores</p>
+              <p>Muelles</p>
+              <p>Ballestas</p></td>
+            <td>
+              <p>Amortiguadores</p>
+              <p>Muelles de suspensión</p>
+              <p>Copela amortiguador y cojinete</p>
+              <p>Guardapolvo amortiguador</p>
+              <p>Almohadilla tope suspensión</p>
+              <p>Ballestas</p>
+            </td>
+            <td>
+              <p>n10019</p>
+              <p>n10020</p>
+              <p>n10021</p>
+              <p>n10022</p>
+              <p>n10023</p>
+              <p>n10024</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Rodamientos</td>
+            <td>
+              <p>Cojinete de rueda</p>
+              <p>Cojinete de empuje</p>
+              <p>Soporte de cardán</p>
+              <p>Casquíllos de biela</p>
+            </td>
+            <td>
+              <p>n10025</p>
+              <p>n10026</p>
+              <p>n10027</p>
+              <p>n10028</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Suspensión y brazos</td>
+            <td>
+              <p>Bieletas de suspensión</p>
+              <p>Brazo de suspensión</p>
+              <p>Rótula de dirección</p>
+              <p>Rótula de suspensión</p>
+              <p>Buje de rueda</p>
+            </td>
+            <td>
+              <p>n10029</p>
+              <p>n10030</p>
+              <p>n10031</p>
+              <p>n10032</p>
+              <p>n10033</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Sistema eléctrico</td>
+            <td>
+              <p>Faro principal</p>
+              <p>Piloto intermitente</p>
+              <p>Sonda Lambda</p>
+              <p>Alternador</p>
+              <p>Motor de arranque</p>
+              <p>Sensor de temperatura del refrigerante</p>
+            </td>
+            <td>
+              <p>n10034</p>
+              <p>n10035</p>
+              <p>n10036</p>
+              <p>n10037</p>
+              <p>n10038</p>
+              <p>n10039</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Limpieza de cristales</td>
+            <td>
+              <p>Escobillas de limpiaparabrisas</p>
+              <p>Brazo de limpiaparabrisas</p>
+              <p>Bomba de limpiaparabrisas</p>
+            </td>
+            <td>
+              <p>n10040</p>
+              <p>n10041</p>
+              <p>n10042</p>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+      </div>
+      <div class="col-sm-3">
+        <!-- formulario para añadir -->
+        <form id="formRepuestosHilux">
+            <div class="form-group">
+              <label for="categoriaHilux">Categoría</label>
+              <input type="text" class="form-control" name="categoriaHilux" value="" id="categoriaHilux">
+            </div>
+            <div class="form-group">
+              <label for="repuestoHilux">Repuesto</label>
+              <input type="text" class="form-control" name="repuestoHilux" value="" id="repuestoHilux">
+            </div>
+            <div class="form-group">
+              <label for="referenciaHilux">Referencia</label>
+              <input type="text" class="form-control" name="referenciaHilux" value="" id="referenciaHilux">
+            </div>
+            <input type="submit" class="btn btn-default" name="Añadir repuesto" value="Añadir repuesto" id="boton-enviar-repuesto-Hilux">
+          </form>
+      </div>
+    </div>
+    <div class="container">
+      <ul class="pager">
+        <li><a href="producto.html">Volver</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
